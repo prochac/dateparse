@@ -608,6 +608,9 @@ func TestParseStrict(t *testing.T) {
 
 	_, err = ParseStrict("2009-08-12T22:15Z")
 	assert.Equal(t, nil, err)
+
+	_, err = ParseStrict(`dataddo, faces, bug`)
+	assert.NotEqual(t, nil, err)
 }
 
 // Lets test to see how this performs using different Timezones/Locations
